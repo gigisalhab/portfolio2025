@@ -1,16 +1,13 @@
-/* Global Styles */
 body {
+    background-color: #F4FAFF;
+    color: #535657;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFE8D4;
-    color: #45062E;
     text-align: center;
 }
-
-/* Header */
 header {
-    background: #45062E;
+    background: #4F646F;
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -18,92 +15,52 @@ header {
     top: 0;
     left: 0;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
 }
-
 nav ul li {
     margin: 0 15px;
 }
-
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
-
-/* Hero Section */
 #hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-image.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #4F646F;
+    position: relative;
+    overflow: hidden;
 }
-
-#hero h2 {
-    font-size: 2.5rem;
+.animated-piece {
+    position: absolute;
+    top: 10%;
+    left: -100px;
+    width: 50px;
+    height: 50px;
+    background: #B7ADCF;
+    border-radius: 50%;
+    animation: floatAnimation 6s infinite alternate ease-in-out;
 }
-
-/* Call to Action */
-.cta {
-    background: #7F055F;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin-top: 15px;
-    transition: background 0.3s ease-in-out;
-}
-
-.cta:hover {
-    background: #E5A4CB;
-}
-
-/* Sections */
-section {
-    padding: 50px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-/* Projects */
-.project {
-    background: #EBD2BE;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact */
-#contact a {
-    color: #7F055F;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background: #45062E;
-    color: white;
-    padding: 20px 0;
-    margin-top: 20px;
+@keyframes floatAnimation {
+    0% {
+        left: -100px;
+        transform: rotate(0deg);
+    }
+    100% {
+        left: 100vw;
+        transform: rotate(360deg);
+    }
 }

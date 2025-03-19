@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenna's Projects</title>
+    <style>
+        body {
+            background-color: #F4FAFF;
+            color: #535657;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: #4F646F;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        main {
+            padding: 100px 20px;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .bubble-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .bubble {
+            width: 100px;
+            height: 100px;
+            background: #B7ADCF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .bubble:hover {
+            transform: scale(1.1);
+        }
+        .bubble.expanded {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: #DEE7E7;
+            position: absolute;
+            z-index: 10;
+            padding: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Jenna's Projects</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#class-projects">Class Projects</a></li>
+                <li><a href="#independent-study">Independent Study</a></li>
+                <li><a href="#work-experience">Work Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="class-projects" class="category">
+            <h2>Class Projects</h2>
+            <div class="bubble-container">
+                <div class="bubble" onclick="expandBubble(this, 'Status Page for Science Experiments: A UX Case Study')">SP</div>
+            </div>
+        </section>
+        
+        <section id="independent-study" class="category">
+            <h2>Independent Study</h2>
+            <div class="bubble-container">
+                <div class="bubble" onclick="expandBubble(this, 'Personal Research on UX in Community Capital')">UX</div>
+            </div>
+        </section>
+        
+        <section id="work-experience" class="category">
+            <h2>Work Experience</h2>
+            <div class="bubble-container">
+                <div class="bubble" onclick="expandBubble(this, 'NC3 Internship: Website Usability Research')">NC3</div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        function expandBubble(element, text) {
+            if (!element.classList.contains('expanded')) {
+                element.classList.add('expanded');
+                element.innerHTML = `<p>${text}</p>`;
+            } else {
+                element.classList.remove('expanded');
+                element.innerHTML = element.innerHTML.charAt(0);
+            }
+        }
+    </script>
+</body>
+</html>
